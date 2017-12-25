@@ -6,7 +6,7 @@ export class CommonService {
   constructor() { }
 
   getToken() {
-    return localStorage.getItem("auth-token") || null;
+    return localStorage.getItem('auth-token') || null;
   }
 
 }

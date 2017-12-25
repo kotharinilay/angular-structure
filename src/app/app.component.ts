@@ -8,8 +8,7 @@ import { HttpClientService } from 'app/lib/http/http-client.service';
 export class AppComponent {
   title = 'app';
   constructor(private _http: HttpClientService) {
-    _http.get("https://swapi.co/api/people/1/").subscribe(res => {
-      debugger;
+    _http.get('https://swapi.co/api/people/1/').subscribe(res => {
     });
   }
 }
