@@ -4,9 +4,4 @@ import { Injectable } from '@angular/core';
 export class CommonService {
 
   constructor() { }
-
-  getToken() {
-    return localStorage.getItem("auth-token") || null;
-  }
-
 }
