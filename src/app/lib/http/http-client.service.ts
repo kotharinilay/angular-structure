@@ -1,20 +1,20 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
-import { HttpOptions, RequestOptions } from 'app/shared/interfaces/http-interface';
+import { IHttpOptions, IRequestOptions } from 'app/shared/interfaces/http-interface';
 
 @Injectable()
 export class HttpClientService {
 
   constructor(private http: HttpClient) { }
 
-  get(url: string, headers?: any, params?: any, options?: HttpOptions) {
+  get(url: string, headers?: any, params?: any, options?: IHttpOptions) {
     return this.http.get(url, <any>this.getRequestOptions(headers, params, options));
   }
 
-  private getRequestOptions(headers?: any, params?: any, options?: HttpOptions): RequestOptions {
+  private getRequestOptions(headers?: any, params?: any, options?: IHttpOptions): IRequestOptions {
     headers = headers || {};
     params = params || {};
-    options = new HttpOptions(options);
+    options = options || {};
 
     if (!headers['Content-Type']) {
       headers['Content-Type'] = 'application/json';

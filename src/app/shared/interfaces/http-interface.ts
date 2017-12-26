@@ -1,18 +1,14 @@
 import { HttpHeaders } from '@angular/common/http/src/headers';
 import { HttpParams } from '@angular/common/http/src/params';
 
-export class HttpOptions {
-    constructor(options: HttpOptions = {}) {
-        this.observe = options.observe || 'body';
-        this.responseType = options.responseType || 'json';
-    }
+export class IHttpOptions {
     public observe?: string;
     public reportProgress?: boolean;
     public responseType?: string;
     public withCredentials?: boolean;
 }
 
-export class RequestOptions extends HttpOptions {
+export class IRequestOptions extends IHttpOptions {
     public headers?: HttpHeaders;
     public params?: HttpParams;
 }
