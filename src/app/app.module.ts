@@ -1,28 +1,45 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 
-import { SharedModule } from 'app/shared/shared.module';
+import { ResponseInterceptor } from 'app/lib/http/response-interceptor';
 import { routing } from 'app/app.routing';
 
-import { AppComponent } from './app.component';
-
+// Service imports
 import { CommonService } from 'app/shared/services/common.service';
 import { AuthService } from 'app/shared/services/auth.service';
 import { HttpClientService } from 'app/lib/http/http-client.service';
+import { LoginService } from 'app/modules/login/login.service';
 
-import { ResponseInterceptor } from 'app/lib/http/response-interceptor';
+// Guard imports
+import { SkipLoginGuard } from 'app/guards/skip-login.guard';
+import { AuthGuard } from 'app/guards/auth.guard';
 
+// Module imports
+import { SharedModule } from 'app/shared/shared.module';
+import { LoginComponent } from './modules/login/login.component';
+
+// Component imports
+import { AppComponent } from './app.component';
+import { LayoutComponent } from './containers/layout/layout.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
+import { BlankLayoutComponent } from './containers/blank-layout/blank-layout.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LoginComponent,
+    LayoutComponent,
+    NotFoundComponent,
+    BlankLayoutComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     SharedModule,
-    routing
+    routing,
+    FormsModule
   ],
   providers: [
     CommonService,
@@ -32,7 +49,10 @@ import { ResponseInterceptor } from 'app/lib/http/response-interceptor';
       provide: HTTP_INTERCEPTORS,
       useClass: ResponseInterceptor,
       multi: true
-    }
+    },
+    SkipLoginGuard,
+    AuthGuard,
+    LoginService
   ],
   bootstrap: [AppComponent]
 })

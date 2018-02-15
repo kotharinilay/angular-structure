@@ -13,6 +13,10 @@ export class AuthService {
     return localStorage.getItem('auth-token') || null;
   }
 
+  setAuhToken(token: string) {
+    localStorage.setItem('auth-token', token);
+  }
+
   refreshToken(): Observable<string> {
     /*
         The call that goes in here will use the existing refresh token to call

@@ -1,0 +1,110 @@
+@import '../../../scss/shared';
+
+.section-login {
+    min-height: 100vh;
+    @include atSmall {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__header {
+        text-align: center;
+        padding: 6.667rem 15px 0 15px;
+        margin-bottom: -8.75rem;
+        position: relative;
+        z-index: 2;
+        background-color: $color-white;
+        @include atSmall {
+            padding: 0.5rem 15px 0 15px;
+            margin-bottom: -7.5625rem;
+        }
+
+        &:before {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            transform: translateY(100%);
+            background-image: url("../../../assets/images/waves.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center bottom;
+            height: 14.5rem;
+            width: 100%;
+            @include atSmall {
+                height: 6.5rem;
+            }
+        }
+
+        &:after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            transform: translateY(98%);
+            width: 100%;
+            height: 8.75rem;
+            background-image: url("../../../assets/images/login-wave.svg");
+            background-repeat: no-repeat;
+            background-size: auto 100%;
+            background-position: center bottom;
+            pointer-events: none;
+            @include atSmall {
+                height: 5.12rem;
+            }
+        }
+    }
+
+    &__logo {
+        width: 50%;
+        display: block;
+        max-width: 340px;
+        margin: 0 auto;
+
+        &-img {
+            width: 50%;
+            height: auto;
+        }
+    }
+
+    &__main {
+        flex: 1 1 auto;
+        background-color: $color-primary;
+        padding: 28.333rem 15px 7.5rem 15px;
+        position: relative;
+        z-index: 1;
+        @include atSmall {
+            padding: 6.5rem 15px 2rem 15px;
+        }
+
+        &-content {
+            margin-top: 10.833rem;
+            max-width: 610px;
+            margin: 0 auto;
+            @include atSmall {
+                margin-top: 8.125rem;
+            }
+        }
+
+        &--bg-2,
+        &--bg-3 {
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+
+        &--bg-2 {
+            background-image: url("../../../assets/images/bg-2.jpg");
+        }
+
+        &--bg-3 {
+            background-image: url("../../../assets/images/bg-3.jpg");
+        }
+    }
+
+    & > * {
+        width: 100%;
+    }
+}

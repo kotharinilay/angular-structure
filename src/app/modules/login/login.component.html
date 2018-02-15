@@ -1,0 +1,73 @@
+<section class="section-login">
+  <header class="section-login__header">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+          <a href="#" class="u-display-inline-block section-login__logo">
+            <img src="assets/images/logo.png" alt="Logo" class="section-login__logo-img">
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="section-login__main section-login__main--bg-3">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="section-login__main-content">
+            <p class="paragraph paragraph--med u-color-white u-shadow-text u-letter-spacing-small u-margin-bottom-med u-align-inline-center">Sign in to Inibii Energy Management Platform</p>
+            <form class="form" name="loginForm" (ngSubmit)="f.form.valid && login()" #f="ngForm" novalidate>
+              <div class="form__group u-shadow">
+
+                <p *ngIf="f.submitted && !username.valid" class="alert alert-danger paragraph paragraph--small u-color-red u-shadow-text u-letter-spacing-small">
+                  Username is required
+                </p>
+                <div class="form__input-box">
+                  <img src="assets/images/i-user.svg" alt="User icon" class="form__input-box__icon">
+                  <input type="text" name="username" class="form__input" placeholder="Username" [(ngModel)]="model.username" #username="ngModel"
+                    required>
+                  <p class="paragraph u-color-primary form__input-box__label">
+                    <a href="#">Forgot?</a>
+                  </p>
+                </div>
+
+                <p *ngIf="f.submitted && !password.valid" class="alert alert-danger paragraph paragraph--small u-color-red u-shadow-text u-letter-spacing-small">
+                  Password is required
+                </p>
+                <div class="form__input-box">
+                  <img src="assets/images/i-password.svg" alt="Password icon" class="form__input-box__icon">
+                  <input type="password" class="form__input" placeholder="Password" name="password" [(ngModel)]="model.password" #password="ngModel"
+                    required>
+                  <p class="paragraph u-color-primary form__input-box__label">
+                    <a href="#">Forgot?</a>
+                  </p>
+                </div>
+
+              </div>
+              <div class="form__group">
+                <button [disabled]="isLoading" class="form__btn form__btn--bg-primary-dark paragraph u-color-white u-shadow">SUBMIT</button>
+              </div>
+              <div class="form__group">
+                <button class="form__btn paragraph u-color-white u-shadow form__btn--bg-primary">REQUEST ACCESS</button>
+              </div>
+              <p *ngIf="error" class="alert alert-danger paragraph paragraph--small u-color-red u-shadow-text u-letter-spacing-small u-margin-bottom-med u-align-inline-center">
+                {{ error }}
+              </p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="subfooter">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+          <p class="paragraph paragraph--small u-color-white">©2018 Inibii Technology. All rights reserved</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+</section>
