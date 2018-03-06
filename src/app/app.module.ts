@@ -10,7 +10,6 @@ import { routing } from 'app/app.routing';
 import { CommonService } from 'app/shared/services/common.service';
 import { AuthService } from 'app/shared/services/auth.service';
 import { HttpClientService } from 'app/lib/http/http-client.service';
-import { LoginService } from 'app/modules/login/login.service';
 
 // Guard imports
 import { SkipLoginGuard } from 'app/guards/skip-login.guard';
@@ -18,7 +17,6 @@ import { AuthGuard } from 'app/guards/auth.guard';
 
 // Module imports
 import { SharedModule } from 'app/shared/shared.module';
-import { LoginComponent } from './modules/login/login.component';
 
 // Component imports
 import { AppComponent } from './app.component';
@@ -29,7 +27,6 @@ import { BlankLayoutComponent } from './containers/blank-layout/blank-layout.com
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent,
     LayoutComponent,
     NotFoundComponent,
     BlankLayoutComponent
@@ -51,8 +48,7 @@ import { BlankLayoutComponent } from './containers/blank-layout/blank-layout.com
       multi: true
     },
     SkipLoginGuard,
-    AuthGuard,
-    LoginService
+    AuthGuard
   ],
   bootstrap: [AppComponent]
 })
