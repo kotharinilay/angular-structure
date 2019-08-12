@@ -6,12 +6,12 @@ import { AuthGuard, SkipLoginGuard } from './core/guards';
 const routes: Routes = [
   {
     path: '',
-    canLoad: [SkipLoginGuard],
+    canActivate: [SkipLoginGuard],
     loadChildren: () => import(`./modules/non-auth`).then(m => m.NonAuthModule)
   },
   {
     path: '',
-    canLoad: [AuthGuard],
+    canActivate: [AuthGuard],
     loadChildren: () => import(`./modules/auth`).then(m => m.AuthModule)
   },
   {

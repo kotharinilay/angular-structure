@@ -15,7 +15,8 @@ export class LoginComponent implements OnInit {
   userRoleId: any;
   @ViewChild('secondDialog', { static: true }) secondDialog: TemplateRef<any>;
   loginForm: FormGroup;
-  constructor(private formBuilder: FormBuilder,
+  constructor(
+    private formBuilder: FormBuilder,
     private router: Router,
     private nonAuthService: NonAuthService,
     private authService: AuthService,
@@ -26,7 +27,7 @@ export class LoginComponent implements OnInit {
       userName: new FormControl('', [Validators.required,
       Validators.pattern('[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$')]),
       password: new FormControl('', [Validators.required])
-    })
+    });
   }
 
   loginUser(form: any) {
@@ -34,24 +35,6 @@ export class LoginComponent implements OnInit {
       return;
     }
     this.nonAuthService.loginUser(form.value).subscribe(response => {
-      this.authService.setAuhToken(response['Result'].token)
-      const user: UserModel = {
-        lastName: response['Result']['user'].lastName,
-        firstName: response['Result']['user'].firstName,
-        clientId: response['Result']['user'].clientId,
-        emailAddress: response['Result']['user'].emailAddress,
-        initial: response['Result']['user'].initial,
-        phoneNumber: response['Result']['user'].phoneNumber,
-        userId: response['Result']['user'].userId,
-        userRoleId: response['Result']['user'].userRoleId,
-        isActive: true,
-        isDeleted: false,
-        isExpired: false,
-        password: ''
-      }
-      this.authService.setUserInfoAuth(user);
-      localStorage.setItem('clientName', response['Result']['user'].clientName);
-      this.router.navigate(['./']);
     });
   }
 

@@ -9,9 +9,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 export class LandingPageComponent implements OnInit {
   constructor(private router: Router, private activeRoute: ActivatedRoute) { }
 
-  ngOnInit() {
-  
-  }
+  ngOnInit() { }
 
   navigateToSignup() {
     this.router.navigate(['/signup']);

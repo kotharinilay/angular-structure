@@ -7,5 +7,4 @@ export {
     UserStatusModel
 } from './user';
 
-export * from './company';
 export * from './login';

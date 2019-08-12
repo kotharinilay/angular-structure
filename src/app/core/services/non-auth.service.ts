@@ -57,7 +57,6 @@ export class NonAuthService {
         ),
         map((response: any) => {
           return response;
-        }));;
-
+        }));
   }
 }

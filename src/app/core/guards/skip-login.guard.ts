@@ -1,14 +1,15 @@
 import { Injectable } from '@angular/core';
-import { Router, CanLoad } from '@angular/router';
+import { Router, CanActivate, RouterStateSnapshot, ActivatedRouteSnapshot } from '@angular/router';
 
-import { Observable } from 'rxjs';
 import { AuthService } from '../services';
 
 
 @Injectable()
-export class SkipLoginGuard implements CanLoad {
-  canLoad(route: import('@angular/router').Route,
-    segments: import('@angular/router').UrlSegment[]): boolean | Observable<boolean> | Promise<boolean> {
+export class SkipLoginGuard implements CanActivate {
+
+  constructor(private router: Router, private authService: AuthService) { }
+
+  canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
     const token = this.authService.getAuthToken();
     if (token) {
       this.router.navigate(['/dashboard']);
@@ -17,6 +18,4 @@ export class SkipLoginGuard implements CanLoad {
       return true;
     }
   }
-
-  constructor(private router: Router, private authService: AuthService) { }
 }
