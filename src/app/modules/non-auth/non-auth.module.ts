@@ -1,24 +1,34 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { LoginComponent } from 'app/modules/non-auth/login/login.component';
-import { LoginService } from 'app/modules/non-auth/login/login.service';
-import { NonAuthService } from 'app/modules/non-auth/non-auth.service';
-import { NonAuthRouting } from 'app/modules/non-auth/non-auth.routing';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+
+import { NonAuthRoutingModule } from './non-auth-routing.module';
+import { SharedModule } from './../../shared/shared.module';
+import { NonAuthLayoutComponent } from './non-auth-layout.component';
+import { LandingPageComponent } from './components';
+import { SignUpComponent } from './components/sign-up/sign-up.component';
+import { LoginComponent } from './components/login/login.component';
+import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
+import { InvitedUserComponent } from './components/invited-user/invited-user.component';
+import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
+import { ActiveVerificationComponent } from './components/active-verification/active-verification.component';
 
 @NgModule({
+  declarations: [
+    NonAuthLayoutComponent,
+    LandingPageComponent,
+    SignUpComponent,
+    LoginComponent,
+    ForgotPasswordComponent,
+    InvitedUserComponent,
+    ResetPasswordComponent,
+    ActiveVerificationComponent
+  ],
   imports: [
     CommonModule,
-    NonAuthRouting,
-    FormsModule,
-    ReactiveFormsModule
-  ],
-  declarations: [
-    LoginComponent
-  ],
-  providers: [
-    LoginService,
-    NonAuthService
+    NonAuthRoutingModule,
+    SharedModule,
+    HttpClientModule
   ]
 })
 export class NonAuthModule { }

@@ -1,0 +1,41 @@
+h3 {
+    text-align: center;
+    padding-top: 20px;
+}
+
+.firstname {
+    position: absolute;
+    left: 490px;
+    top: 126px;
+}
+
+.initial {
+    position: absolute;
+    left: 765px;
+    top: 127px;
+}
+
+.lastname {
+    position: absolute;
+    top: 192px;
+    left: 490px;
+}
+
+.emailAddress {
+    position: absolute;
+    top: 192px;
+    left: 765px;
+}
+
+
+button.btnSubmit.mat-raised-button.mat-primary {
+    position: absolute;
+    top: 315px;
+    left: 570px;
+}
+
+button.navoigateToUsers.mat-raised-button.mat-primary {
+    position: absolute;
+    top: 315px;
+    left: 720px;
+}

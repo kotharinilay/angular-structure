@@ -1,0 +1,97 @@
+h3 {
+    text-align: center;
+}
+
+.signUp {
+    position: absolute;
+    left: 585px;
+    top: 105px;
+}
+
+.example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+  }
+  
+  .example-full-width {
+    width: 100%;
+  }
+
+  
+
+button.btnSubmit.mat-raised-button.mat-primary {
+  position: absolute;
+  top: 410px;
+  left: 250px;
+}
+
+.firstname {
+  position: absolute;
+  right: 145px;
+}
+
+
+.lastname {
+  position: absolute;
+  top: 0px;
+  left: 185px;
+}
+
+.phoneNumber {
+  position: absolute;
+  left: 185px;
+  top: 60px;
+}
+
+
+.password {
+  position: absolute;
+  top: 130px;
+  left: 185px;
+}
+
+.captcha {
+  position: absolute;
+  top: 285px;
+  right: 157px;
+}
+
+.enterCaptcha {
+  position: absolute;
+  top: 350px;
+  left: -180px;
+}
+
+.refresh {
+  margin-top: 190px;
+  margin-left: 20px;
+}
+
+.initial {
+  position: absolute;
+  top: 60px;
+  right: 145px;
+}
+
+.companyName {
+  position: absolute;
+  top: 125px;
+  right: 146px;
+}
+
+.emailAddress {
+  position: absolute;
+  top: 190px;
+  right: 148px;
+}
+
+.confirmPassword {
+  position: absolute;
+  top: 245px;
+  left: 185px;
+}
+
+i.material-icons.refAdjust {
+  padding-right: 5px;
+}

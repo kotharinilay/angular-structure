@@ -1,0 +1,80 @@
+h3 {
+    text-align: center;
+    padding-top: 20px;
+}
+
+.firstName {
+    position: absolute;
+    right: 750px;
+}
+
+.lastName {
+    position: absolute;
+    top: 115px;
+    left: 700px;
+}
+
+.companyName {
+    position: absolute;
+    top: 170px;
+    right: 750px;
+}
+
+.emailAddress {
+    position: absolute;
+    top: 175px;
+    right: 470px;
+}
+
+.phoneNumber {
+    position: absolute;
+    left: 420px;
+    top: 230px;
+}
+
+a {
+    position: absolute;
+    top: 315px;
+    left: 420px;
+    cursor: pointer;
+    color: #3f51b5;
+}
+
+button.btnSubmit.mat-raised-button.mat-primary {
+    position: absolute;
+    top: 365px;
+    left: 525px;
+}
+
+button.btnCancel.mat-raised-button.mat-primary {
+    position: absolute;
+    top: 365px;
+    left: 670px;
+}
+
+.changePasswword {
+    width: 310px;
+    height: 335px;
+    margin-left: 105px;
+}
+
+button.passwordExit.mat-raised-button.mat-primary {
+    margin-left: 30px;
+}
+
+.actionBtns {
+    margin-top: 20px;
+    margin-left: 0px;
+}
+
+h3.changePasswordHead {
+    margin-top: -10px;
+    margin-left: -115px;
+}
+
+i.material-icons.adjustEye {
+    position: absolute;
+    top: 370px;
+    left: 770px;
+    cursor: pointer;
+}

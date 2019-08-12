@@ -1,0 +1,50 @@
+
+h3 {
+    text-align: center;
+}
+
+table {
+    width: 100%;
+  }
+
+  .mat-elevation-z8.userMgmtGrid {
+    margin-top: 45px;
+}
+
+.addUser {
+    float: right;
+    margin-top: 13px;
+    margin-right: 70px;
+}
+
+mat-form-field.Search.mat-primary.mat-form-field.mat-form-field-type-mat-input.mat-form-field-appearance-legacy.mat-form-field-can-float.mat-form-field-has-label.mat-form-field-hide-placeholder {
+    position: relative;
+    margin-left: 75px;
+}
+
+.actionBtns {
+    margin-left: 110px;
+}
+
+button.deleteExit.mat-raised-button.mat-primary {
+    margin-left: 35px;
+}
+
+th.statusHead.cdk-column-status.mat-column-status.cdk-header-cell.mat-header-cell.ng-star-inserted {
+    padding-right: 70px;
+}
+
+td.mat-cell, td.mat-footer-cell, th.mat-header-cell {
+    padding-left: 50px;
+}
+
+th.emailHead.cdk-column-emailAddress.mat-column-emailAddress.cdk-header-cell.mat-header-cell.ng-star-inserted {
+    padding-left: 75px;
+}
+
+
+button.logOut.mat-raised-button.mat-primary {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+}
