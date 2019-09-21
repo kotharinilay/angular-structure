@@ -7,12 +7,12 @@ const routes: Routes = [
   {
     path: '',
     canActivate: [SkipLoginGuard],
-    loadChildren: () => import(`./modules/non-auth`).then(m => m.NonAuthModule)
+    loadChildren: () => import('./modules/non-auth').then(m => m.NonAuthModule)
   },
   {
     path: '',
     canActivate: [AuthGuard],
-    loadChildren: () => import(`./modules/auth`).then(m => m.AuthModule)
+    loadChildren: () => import('./modules/auth').then(m => m.AuthModule)
   },
   {
     component: NotFoundComponent,
