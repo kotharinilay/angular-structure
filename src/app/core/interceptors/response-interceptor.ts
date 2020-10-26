@@ -5,7 +5,6 @@ import {
   HttpEvent, HttpResponse, HttpErrorResponse
 } from '@angular/common/http';
 
-import { MatSnackBar } from '@angular/material';
 import { BehaviorSubject, Observable, throwError } from 'rxjs';
 import { filter, switchMap, catchError, finalize, take, tap } from 'rxjs/operators';
 
@@ -19,7 +18,7 @@ export class ResponseInterceptor implements HttpInterceptor {
 
   constructor(
     private authService: AuthService,
-    private router: Router, private snackBar: MatSnackBar) {
+    private router: Router) {
     this.isRefreshingToken = false;
   }
 
@@ -42,36 +41,15 @@ export class ResponseInterceptor implements HttpInterceptor {
         if (err instanceof HttpErrorResponse) {
           switch (err.status) {
             case 400:
-              this.snackBar.open(err.error.ResponseException.ExceptionMessage, 'Error', {
-                duration: 2500,
-                verticalPosition: 'top'
-              });
               return this.handle400Error(err);
             case 401:
-              this.snackBar.open(err.error.ResponseException.ExceptionMessage, 'Error', {
-                duration: 2500,
-                verticalPosition: 'top'
-              });
               return this.handle401Error(req, next, err);
             case 403:
-              this.snackBar.open(err.error.ResponseException.ExceptionMessage, 'Error', {
-                duration: 2500,
-                verticalPosition: 'top'
-              });
               break;
             case 500:
-              this.snackBar.open(err.error.ResponseException.ExceptionMessage, 'Error', {
-                duration: 2500,
-                verticalPosition: 'top'
-              });
               break;
             case 422:
-              this.snackBar.open(err.error.ResponseException.ValidationErrors[0].Message, 'Error', {
-                duration: 2500,
-                verticalPosition: 'top'
-              });
               return throwError(err);
-              break;
             default:
               return throwError(err);
           }

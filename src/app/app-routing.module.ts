@@ -1,7 +1,8 @@
-import { ModuleWithProviders } from '@angular/compiler/src/core';
+import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { NotFoundComponent } from './shared';
 import { AuthGuard, SkipLoginGuard } from './core/guards';
+
 
 const routes: Routes = [
   {
@@ -25,6 +26,8 @@ const routes: Routes = [
   }
 ];
 
-export const AppRoutingModule: ModuleWithProviders = RouterModule.forRoot(routes, {
-  onSameUrlNavigation: 'reload'
-});
+@NgModule({
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
+})
+export class AppRoutingModule { }

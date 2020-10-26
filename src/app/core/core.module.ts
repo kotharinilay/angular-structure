@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { HTTP_INTERCEPTORS, HttpClientModule, HttpClient } from '@angular/common/http';
 
 import { AuthGuard, SkipLoginGuard } from './guards';
@@ -23,8 +22,7 @@ import { AuthService } from './services';
   ],
   imports: [
     CommonModule,
-    HttpClientModule,
-    MatSnackBarModule
+    HttpClientModule
   ]
 })
 export class CoreModule { }
