@@ -42,6 +42,7 @@
       true,
       140
     ],
+    "member-access": false,
     "member-ordering": [
       true,
       {
@@ -53,6 +54,7 @@
         ]
       }
     ],
+    "no-consecutive-blank-lines": false,
     "no-console": [
       true,
       "debug",
@@ -61,6 +63,7 @@
       "timeEnd",
       "trace"
     ],
+    "no-use-before-declare": true,
     "no-empty": false,
     "no-inferrable-types": [
       true,
@@ -74,6 +77,7 @@
       true,
       "as-needed"
     ],
+    "ordered-imports": false,
     "quotemark": [
       true,
       "single"
@@ -127,6 +131,7 @@
         "check-typecast"
       ]
     },
+    "no-unused-variable": true,
     "no-conflicting-lifecycle": true,
     "no-host-metadata-property": true,
     "no-input-rename": true,
